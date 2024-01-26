@@ -1,27 +1,320 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+.bg-normal {
+  background-color: #A4ACAF;
+}
+.bg-fire {
+  background-color: #fd7d24;
+  color: white;
+}
+.bg-water {
+  background-color: #4592C4;
+  color: white;
+}
+.bg-ice {
+  background-color: #51C4E7;
+}
+.bg-grass {
+  background-color: #9BCC50;
+}
+.bg-bug {
+  background-color: #729F3F;
+  color: white;
+}
+.bg-electric {
+  background-color: #EED535;
+}
+.bg-rock {
+  background-color: #A38C21;
+  color: #fff;
+}
+.bg-steel {
+  background-color: #9EB7B8;
+}
+.bg-ground {
+  background: linear-gradient(180deg, #EED535 50%, #AB9842 50%);
+}
+.bg-flying {
+  background: linear-gradient(180deg, #3dc7ef 50%, #bdb9b8 50%);
+}
+.bg-dragon {
+  background: linear-gradient(180deg, #53A4CF 50%, #F16E57 50%);
+  color: #fff;
+}
+.bg-dark {
+  background-color: #707070;
+  color: #fff;
+}
+.bg-psychic {
+  background-color: #F366B9;
+  color: #fff;
+}
+.bg-fairy {
+  background-color: #FDB9E9;
+}
+.bg-ghost {
+  background-color: #7B62A3;
+  color: #fff;
+}
+.bg-fighting {
+  background-color: #D56723;
+  color: #fff;
+}
+.bg-poison {
+  background-color: #B97FC9;
+  color: #fff;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  -webkit-user-select: none;
+  user-select: none;
+  scroll-behavior: smooth;
+  background-color: #f5f5f5;
+  font-family: "Roboto", sans-serif;
+}
+
+h1,
+h2,
+span,
+a {
+  color: #212121;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.bg-primary {
+  background-color: #f5f5f5;
+}
+
+.bg-secondary {
+  background-color: rgba(227, 52, 13, 0.9215686275);
+}
+
+.bg-tertiary {
+  background-color: #3282B8;
+}
+
+.bg-quaternary {
+  background-color: #212121;
+}
+
+.bg-footer {
+  background-color: #1f1f1f;
+}
+
+.text-primary {
+  color: #f5f5f5;
+}
+
+.text-secondary {
+  color: rgba(227, 52, 13, 0.9215686275);
+}
+
+.text-tertiary {
+  color: #3282B8;
+}
+
+.text-quaternary {
+  color: #212121;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #9ca3af;
+  border-radius: 50px;
+}
+
+.rounded-100 {
+  border-radius: 100%;
+}
+
+.font-12 {
+  font-size: 0.8125rem;
+}
+.font-13 {
+  font-size: 0.8125rem;
+}
+.font-14 {
+  font-size: 0.875rem;
+}
+.font-16 {
+  font-size: 1rem;
+}
+.font-17 {
+  font-size: 1.0625rem;
+}
+.font-18 {
+  font-size: 1.125rem;
+}
+.font-20 {
+  font-size: 1.25rem;
+}
+.font-21 {
+  font-size: 1.3125rem;
+}
+.font-24 {
+  font-size: 1.5rem;
+}
+.font-28 {
+  font-size: 1.75rem;
+}
+.font-30 {
+  font-size: 1.875rem;
+}
+.font-32 {
+  font-size: 2rem;
+}
+.font-34 {
+  font-size: 2.125rem;
+}
+.font-35 {
+  font-size: 2.1875rem;
+}
+.font-36 {
+  font-size: 2.25rem;
+}
+.font-39 {
+  font-size: 2.4375rem;
+}
+.font-40 {
+  font-size: 2.5rem;
+}
+.font-42 {
+  font-size: 2.625rem;
+}
+.font-50 {
+  font-size: 3.125rem;
+}
+.font-55 {
+  font-size: 3.4375rem;
+}
+.font-64 {
+  font-size: 4rem;
+}
+.font-100 {
+  font-size: 6.25rem;
+}
+
+.loader {
+  width: 60px;
+  height: 60px;
+  background-color: #fff;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  border: 3px solid;
+  animation: frames 0.7s linear 0s infinite;
+}
+.loader::after {
+  content: "";
+  position: absolute;
+  width: 60px;
+  height: 30px;
+  background-color: red;
+  border-bottom: 4px solid;
+  top: -3px;
+}
+.loader::before {
+  content: "";
+  position: absolute;
+  background-color: #fff;
+  width: 18px;
+  height: 18px;
+  border: 4px solid;
+  border-radius: 50%;
+  bottom: 18px;
+  right: 18px;
+  top: 17px;
+  z-index: 1;
+}
+@keyframes frames {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+div.fondo-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
 }
+div.fondo-container div.trinagles {
+  position: relative;
+  display: flex;
+  height: 100%;
+}
+div.fondo-container div.trinagles div.triangle {
+  position: absolute;
+  background-color: white;
+  background: rgb(255, 255, 255);
+  clip-path: polygon(50% 0, 0 100%, 100% 100%);
+  animation: move 5s linear infinite;
+}
+@keyframes move {
+  to {
+    transform: translateY(100%);
+  }
+}
+div.fondo-container::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: #000;
+  animation: escanerMove 4s alternate linear infinite;
+}
+div.fondo-container::before {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.775);
+  animation: escanerMove2 3s linear infinite 15s;
+}
+@keyframes escanerMove {
+  to {
+    transform: translateY(-100vh);
+  }
+}
+@keyframes escanerMove2 {
+  to {
+    transform: translateY(-100vh);
+  }
+}
+
+/*# sourceMappingURL=globals.css.map */
