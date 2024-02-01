@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-
+import PokemonType from './PokemonType';
 const PokeCard = ({ pokemon }) => {
   return (
     <div className='grid grid-flow-row grid-cols-2 md:grid-cols-4 xl:grid-cols-4 place-items-center gap-4'>
@@ -27,16 +27,7 @@ const PokeCard = ({ pokemon }) => {
               </div>
               <div className='flex flex-col capitalize py-2 gap-2'>
                 <p className='text-xl'>{p.name}</p>
-                <div className={`flex gap-3 text-sm `}>
-                  {p.types.map((types) => (
-                    <p
-                      key={types.slot}
-                      className={`rounded-md bg-${types.type.name} px-3 `}
-                    >
-                      {types.type.name}
-                    </p>
-                  ))}
-                </div>
+                <PokemonType types={p.types} />
               </div>
             </div>
           </Link>
